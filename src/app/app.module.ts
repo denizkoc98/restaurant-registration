@@ -10,6 +10,10 @@ import { RestRegistrationService } from './rest-registration.service';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { AuthenticationServiceService } from './authentication-service.service';
+import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MyDialogComponent } from './my-dialog/my-dialog.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +21,8 @@ import { AuthenticationServiceService } from './authentication-service.service';
     RegistrationComponent,
     SearchDeleteComponent,
     LoginComponent,
+    CustomerRegistrationComponent,
+    MyDialogComponent
   ],
   imports: [
     
@@ -24,6 +30,8 @@ import { AuthenticationServiceService } from './authentication-service.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule
     
   ],
   providers: [RestRegistrationService, AuthenticationServiceService],

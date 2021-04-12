@@ -1,0 +1,73 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div style="text-align: center">
+    <h1>{{message}}</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <fieldset>
+                    <legend class="text-center">Valid information is required to register. <span class="req"><small>
+                                required *</small></span></legend>
+
+                    <div class="form-group">
+                        <label for="firstname"><span class="req">* </span> First Name:  </label>
+                        <input required type="text" [(ngModel)]="customer.firstName" name="firstName" id="firstName"
+                            class="form-control phone" maxlength="28" placeholder="Enter your first name..." />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastname"><span class="req">* </span> Last Name:  </label>
+                        <input class="form-control" type="text" [(ngModel)]="customer.lastName" name="lastName" id="txt" required
+                            placeholder="Enter your last name..." />
+                        <div id="errFirst"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username"><span class="req">* </span> User Name: <small>This will be your login user
+                            name</small> </label>
+                        <input class="form-control" type="text" [(ngModel)]="customer.username" name="username" id="txt" required
+                            placeholder="Enter your user name..." />
+                        <div id="errFirst"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password"><span class="req">* </span> Password:  </label>
+                        <input class="form-control" type="password" [(ngModel)]="customer.password" name="password" id="txt" required
+                            placeholder="Enter your password..." />
+                        <div id="errFirst"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone"><span class="req">* </span> 
+                            Phone number : </label>
+                        <input class="form-control" type="text" [(ngModel)]="customer.phone" name="phone" id="txt"
+                            placeholder="Enter your phone number..." required />
+                        <div id="errLast"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email"><span class="req">* </span> Email: </label>
+                        <input class="form-control" required type="text" [(ngModel)]="customer.email" name="email"
+                            id="email" placeholder="Write your email address..." />
+                        <div class="status" id="status"></div>
+                    </div>
+                    
+
+                    
+                    
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="customerRegister()">
+                    </div>
+                </fieldset>
+            </form><!-- ends register form -->
+            <!-- second for to fiter user-->
+        </div><!-- ends col-6 -->
+
+    </div>
+</div>
+<router-outlet></router-outlet>

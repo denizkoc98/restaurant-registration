@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationServiceService } from '../authentication-service.service';
 import { Customer } from '../customer';
+import { MyDialogComponent } from '../my-dialog/my-dialog.component';
 import { RestRegistrationService } from '../rest-registration.service';
 
 
@@ -23,7 +25,7 @@ export class LoginComponent implements OnInit {
   invalidLogin=false;
 
   constructor(
-    private router: Router,  private service: AuthenticationServiceService, private http:HttpClient) { }
+    private router: Router,  private service: AuthenticationServiceService, private http:HttpClient,  public dialog: MatDialog) { }
 
   ngOnInit() {
   }
@@ -37,9 +39,25 @@ export class LoginComponent implements OnInit {
       },
       error => {
         this.invalidLogin = true
+        this.openDialog()
       }
     )
     );
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(MyDialogComponent, {
+      
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      
+    });
+  }
+  doRegister(){
+    this.router.navigate(['/customer/register']);
+
   }
 
   
