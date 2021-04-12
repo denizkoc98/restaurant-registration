@@ -1,0 +1,53 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<div class="container">
+    <div class="row">
+               <div id="custom-search-input">
+                                <div class="input-group col-md-12" style="text-align: center">
+                                    <input type="text" class="search-query form-control" placeholder="Search With ID"  name="rest_id" [(ngModel)]="rest_id"/>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-danger" type="button" (click)="findRestaurantById(restaurant.rest_id)">
+                                            <span class=" glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+    </div>
+    </div>
+    
+<div class="container">
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Restaurant Name</th>
+            <th>Restaurant Address</th>
+            <th>Phone Number</th>
+            <th>Events</th>
+            <th>Working Hours</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let restaurant of restaurants">
+            <td>{{restaurant.rest_id}}</td>
+            <td>{{restaurant.rest_name}}</td>
+            <td>{{restaurant.rest_adress}}</td>
+            <td>{{restaurant.rest_phone}}</td>
+            <td>{{restaurant.rest_events}}</td>
+            <td>{{restaurant.rest_workinghours}}</td>
+            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteRegistration(restaurant.rest_id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+            
+          </tr>
+    </tbody>
+    </table>
+    </div>
+</div>
+<router-outlet></router-outlet>
+
