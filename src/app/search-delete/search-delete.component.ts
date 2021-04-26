@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RestRegistrationService } from '../rest-registration.service';
+import { Restaurant } from '../restaurant';
 
 @Component({
   selector: 'app-search-delete',
@@ -11,7 +13,7 @@ export class SearchDeleteComponent implements OnInit {
   restaurants: any;
   
   
-  constructor(private service:RestRegistrationService) { }
+  constructor(private router: Router, private service:RestRegistrationService) { }
   
   public deleteRegistration (rest_id:number){
     let resp=this.service.cancelRegistration(rest_id);
@@ -32,4 +34,9 @@ export class SearchDeleteComponent implements OnInit {
     resp.subscribe((data)=>this.restaurants=data);
   }
 
+  
+  onSelect (rest_id: Number): void{
+    this.router.navigate(['/menu', rest_id]).then();
+
+  }
 }

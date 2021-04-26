@@ -1,7 +1,7 @@
 export class Restaurant{
     constructor(
         
-        
+        rest_id: number,
         rest_name:string,
         rest_adress: string,
         rest_phone: string,

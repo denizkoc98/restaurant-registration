@@ -14,6 +14,7 @@ import { CustomerRegistrationComponent } from './customer-registration/customer-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
     SearchDeleteComponent,
     LoginComponent,
     CustomerRegistrationComponent,
-    MyDialogComponent
+    MyDialogComponent,
+    MenuComponent
   ],
   imports: [
     
