@@ -12,7 +12,8 @@ import { Restaurant } from '../restaurant';
 export class RegistrationComponent implements OnInit {
 
 
-  restaurant: Restaurant= new Restaurant("","","","","");
+  
+  restaurant: Restaurant= new Restaurant(1,"","","","","");
   message: any;
   constructor(private service:RestRegistrationService, private router: Router) { }
 

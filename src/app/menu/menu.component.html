@@ -1,1 +1,52 @@
-<p>menu works!</p>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<div class="container">
+    <div class="row">
+               <div id="custom-search-input">
+                                <div class="input-group col-md-12" style="text-align: center">
+                                    <input type="text" class="search-query form-control" placeholder="Search With ID"  name="rest_id" [(ngModel)]="rest_id"/>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-danger" type="button" (click)="findRestaurantById(restaurant.rest_id)">
+                                            <span class=" glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+    </div>
+    </div>
+    
+<div class="container">
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Menu Items</th>
+            <th>Price</th>
+            <th>Description</th>
+             <th>Add To Cart</th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let menu of menus" 
+        >
+            <td>{{menu.itemId}}</td>
+            <td>{{menu.itemName}}</td>
+            <td>{{menu.price}}</td>
+            <td>{{menu.desc}}</td>
+            
+            <td class="text-center"><button class="btn btn-primary" (click)="addToCart()"><span ></span> Add</button></td>
+            
+    </tr>
+    </tbody>
+    </table>
+    </div>
+</div>
+<router-outlet></router-outlet>

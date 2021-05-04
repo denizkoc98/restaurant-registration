@@ -35,8 +35,9 @@ export class SearchDeleteComponent implements OnInit {
   }
 
   
-  onSelect (rest_id: Number): void{
-    this.router.navigate(['/menu', rest_id]).then();
+  public onSelect (rest_id: any){
+    console.log(rest_id);
+    this.router.navigate(['/restaurant', rest_id]);
 
   }
 }

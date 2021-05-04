@@ -38,6 +38,11 @@ export class RestRegistrationService {
 
     }
 
+    public getMenu(rest_id: number){
+      return  this.http.get("http://localhost:8080/restaurant/getmenu/"+ rest_id);  
+
+    }
+
   }
 
   

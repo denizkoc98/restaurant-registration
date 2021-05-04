@@ -14,7 +14,7 @@ export class AuthenticationServiceService {
   authenticate(username: string, password: string){
 
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-    return this.httpClient.get('http://localhost:8080/customer/login',{headers, responseType:'text' as 'json'}).pipe(
+    return this.httpClient.get('http://localhost:8080/customer/login/',{headers, responseType:'text' as 'json'}).pipe(
      map(
        userData => {
         sessionStorage.setItem('username',username);
