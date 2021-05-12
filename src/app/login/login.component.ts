@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   
   username= ""
   password=""
+  id:any
   //customer: Customer= new Customer("","","","","","");
   invalidLogin=false;
 
@@ -33,7 +34,7 @@ export class LoginComponent implements OnInit {
   doLogin(){
     (this.service.authenticate(this.username, this.password).subscribe(
       data => {
-        
+        console.log(this.username)
         this.router.navigate(['/search'])
         this.invalidLogin = false
       },

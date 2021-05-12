@@ -12,15 +12,15 @@ import {Customer} from '../customer'
 })
 export class CustomerRegistrationComponent implements OnInit {
 
-  customer: Customer= new Customer ("","","","","","")
+  customer: Customer= new Customer (1,"","","","","","")
   message: any;
-  constructor(private service: CustRegistrationService, private router: Router) { }
+  constructor(private custservice: CustRegistrationService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   public customerRegister(){
-    let resp=this.service.doCustomerRegistration(this.customer);
+    let resp=this.custservice.doCustomerRegistration(this.customer);
     resp.subscribe((data)=>this.message=data);
     this.router.navigate(["/login"])
 

@@ -26,28 +26,44 @@
     <thead>
         <tr>
             <th>Id</th>
-            <th>Menu Items</th>
+            <th>Menu Item</th>
             <th>Price</th>
             <th>Description</th>
-             <th>Add To Cart</th>
+            
             
             
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let menu of menus" 
-        >
         
-            <td>{{menu.itemId}}</td>
-            <td>{{menu.itemName}}</td>
-            <td>{{menu.price}}</td>
-            <td>{{menu.desc}}</td>
+
+       
+     <tr *ngFor="let item of basketData.hasItem"> 
+
+            <td>{{item.itemId}}</td>
+            <td>{{item.itemName}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.desc}}</td>
             
-            <td class="text-center"><button class="btn btn-primary" (click)="addToCart(menu.itemId)"><span ></span> Add</button></td>
+            
             
     </tr>
+
     </tbody>
     </table>
+    <button type="button" class="btn btn-danger btn-lg">Without discount :{{basketData.totalOrderPrice}} TL</button> 
+    
+    <button type="button" class="btn btn-success btn-lg">With discount: {{basketData.totalExpenses}} TL</button>
+    <h3> </h3>
+    <h3> </h3>
+   <button (click)="doPurchase()"class="btn btn-primary btn-lg btn-block"
+                          
+				      
+          > PURCHASE
+  </button>
+        
     </div>
 </div>
+
+
 <router-outlet></router-outlet>

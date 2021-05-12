@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AcountComponent } from './acount/acount.component';
+import { BasketComponent } from './basket/basket.component';
 import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
@@ -14,6 +16,9 @@ const routes: Routes = [
   {path: "customer/register", component: CustomerRegistrationComponent},
   {path:"", component: LoginComponent},
   { path: 'restaurant/:rest_id', component: MenuComponent},
+  { path: 'myacount', component: AcountComponent},
+  { path: 'basket', component: BasketComponent},
+
 
 ];
 

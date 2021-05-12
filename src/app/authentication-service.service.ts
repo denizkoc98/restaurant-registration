@@ -10,14 +10,16 @@ import { Customer } from './customer';
 export class AuthenticationServiceService {
 
   constructor(private httpClient: HttpClient) { }
-
+  username:any;
   authenticate(username: string, password: string){
 
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
     return this.httpClient.get('http://localhost:8080/customer/login/',{headers, responseType:'text' as 'json'}).pipe(
      map(
        userData => {
-        sessionStorage.setItem('username',username);
+         
+        localStorage.setItem('username',username);
+        
         return userData;
        }
      )
@@ -26,13 +28,14 @@ export class AuthenticationServiceService {
 
   }
   isUserLoggedIn() {
-    let user = sessionStorage.getItem('username')
+    let user = localStorage.getItem('username')
     console.log(!(user === null))
     return !(user === null)
   }
   logOut() {
-    sessionStorage.removeItem('username')
+    localStorage.removeItem('username')
   }
+
 
 
 }

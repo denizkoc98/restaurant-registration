@@ -1,5 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Customer } from './customer';
 
 @Injectable({
@@ -13,7 +15,7 @@ export class CustRegistrationService {
 
     return this.http.post("http://localhost:8080/customer/add", customer, {responseType: "text" as "json"});
   }
-  public getAllRestaurants(){
+  public getAllCustomers(){
 
     return this.http.get("http://localhost:8080/customer/getAllCustomers");
 
@@ -33,5 +35,29 @@ export class CustRegistrationService {
    return this.http.get("http://localhost:8080/customer/login", {headers, responseType:'text' as 'json'})
 
   }
+
+  public getUser(myData: string): Observable<Customer>{
+
+    console.log(myData);
+    return this.http.get<Customer>("http://localhost:8080/customer/findcustomerbyname/"+ myData);
+
+  }
+  public addToCart(menuItemId: number, id: number){
+    
+    return this.http.post("http://localhost:8080/restaurant/basket/"+ menuItemId +"/"+ id ,{responseType: "text"});
+   }
+
+   public getBasket(id:number){
+
+
+    return this.http.get("http://localhost:8080/restaurant/basket/"+ id );
+  }
+
+  
+  public doPurchase(custId:number){
+
+    return this.http.post("http://localhost:8080/restaurant/basket/purchase/"+ custId ,{responseType: "text"});
+  }  
+   
 
 }
