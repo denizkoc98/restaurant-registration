@@ -35,20 +35,22 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let restaurant of restaurants" 
-        (click)="onSelect(restaurant.rest_id)">
+        <tr *ngFor="let restaurant of restaurants" >
+        
             <td>{{restaurant.rest_id}}</td>
             <td>{{restaurant.rest_name}}</td>
             <td>{{restaurant.rest_adress}}</td>
             <td>{{restaurant.rest_phone}}</td>
             <td>{{restaurant.rest_events}}</td>
             <td>{{restaurant.rest_workinghours}}</td>
-            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteRegistration(restaurant.rest_id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+            <td class="text-center"><button class="btn btn-primary" (click)="onSelect(restaurant.rest_id)"><span ></span> Go To Menu</button></td>
+           
             
     </tr>
     </tbody>
     </table>
     </div>
+    
 </div>
 <router-outlet></router-outlet>
 

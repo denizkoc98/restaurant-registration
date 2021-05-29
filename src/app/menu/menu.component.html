@@ -29,7 +29,9 @@
             <th>Menu Items</th>
             <th>Price</th>
             <th>Description</th>
+             <th>Image</th>
              <th>Add To Cart</th>
+
             
             
         </tr>
@@ -42,6 +44,8 @@
             <td>{{menu.itemName}}</td>
             <td>{{menu.price}}</td>
             <td>{{menu.desc}}</td>
+            
+            <img [src]="menu.image" height="60" >
             
             <td class="text-center"><button class="btn btn-primary" (click)="addToCart(menu.itemId)"><span ></span> Add</button></td>
             

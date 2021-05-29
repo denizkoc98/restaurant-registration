@@ -44,7 +44,7 @@ export class CustRegistrationService {
   }
   public addToCart(menuItemId: number, id: number){
     
-    return this.http.post("http://localhost:8080/restaurant/basket/"+ menuItemId +"/"+ id ,{responseType: "text"});
+    return this.http.post("http://localhost:8080/restaurant/basket/addtocart/"+ menuItemId +"/"+ id ,{responseType: "text"});
    }
 
    public getBasket(id:number){
@@ -53,6 +53,23 @@ export class CustRegistrationService {
     return this.http.get("http://localhost:8080/restaurant/basket/"+ id );
   }
 
+
+  public getdetails(id:number){
+
+
+    return this.http.get("http://localhost:8080/restaurant/purchasedetails/"+ id );
+  }
+  public removeItem(mid:number, cid:number){
+
+
+    return this.http.get("http://localhost:8080/restaurant/basket/remove/"+ mid + "/"+ cid);
+  }
+
+  public add(mid:number, cid:number){
+
+
+    return this.http.get("http://localhost:8080/restaurant/basket/add/"+ mid + "/"+ cid);
+  }
   
   public doPurchase(custId:number){
 

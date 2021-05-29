@@ -34,6 +34,7 @@ export class AuthenticationServiceService {
   }
   logOut() {
     localStorage.removeItem('username')
+    localStorage.removeItem('customer')
   }
 
 

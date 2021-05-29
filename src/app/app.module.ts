@@ -18,6 +18,9 @@ import { MenuComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
 import { AcountComponent } from './acount/acount.component';
 import { BasketComponent } from './basket/basket.component';
+import { PurchasedialogComponent } from './purchasedialog/purchasedialog.component';
+import { AddedComponent } from './added/added.component';
+import { LoggedoutComponent } from './loggedout/loggedout.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { BasketComponent } from './basket/basket.component';
     MenuComponent,
     HeaderComponent,
     AcountComponent,
-    BasketComponent
+    BasketComponent,
+    PurchasedialogComponent,
+    AddedComponent,
+    LoggedoutComponent
   ],
   imports: [
     

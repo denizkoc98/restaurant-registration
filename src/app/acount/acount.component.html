@@ -1,1 +1,66 @@
-<p>acount works!</p>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+    
+<div class="container">
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+     <div><strong> <h1> Your Old Purchases:  </h1> </strong></div> 
+    <table class="table table-striped custab">
+   
+    <thead>
+        <tr>
+            <th>Restaurant Name</th>
+            <th>Total Order Price</th>
+            <th>Menu Items</th>
+            <th>Date</th>
+             
+          
+            
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        
+
+       
+     <tr *ngFor="let item of basketData"> 
+    
+         <td>{{item.restname}}</td>
+        <td>{{item.bill}} TL</td>
+
+        <table>
+            <tr *ngFor="let subItem of item.purchaseItem"> 
+            <td>{{subItem.menuitem.itemName}} </td>
+            
+            <td>{{subItem.quantityOrdered}} </td>
+            <td>{{subItem.menuitem.price * subItem.quantityOrdered}} </td>
+            
+        </tr>
+        </table>
+        
+   
+
+            
+     <td>{{item.orderDate}}</td>
+            
+            
+            
+    </tr>
+
+    </tbody>
+    </table>
+
+ 
+        
+    </div>
+</div>
+ <button class="btn btn-danger btn-block" (click)="logout()">Logout</button>
+
+
+
+<router-outlet></router-outlet>

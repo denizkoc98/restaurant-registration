@@ -18,6 +18,7 @@
     <h1 style="background-color:rgb(230, 237, 238);"> Welcome To BookShop! </h1>
 <div class="container">
   <section id="content">
+  <div class="text-center my-5" *ngIf="userName===null;">
     <form action="">
         
       <h1>User Login Page</h1>
@@ -32,12 +33,25 @@
         
         <input type="submit" name="Register" id="reg" value="Register" (click)="doRegister()"/>
         
-       </div>
+       
 
       
-      
+      </div>
     </form><!-- form -->
-    
+    </div>
+<div class="text-center my-5" *ngIf="userName!=null;">
+     <div class="text-center my-5" >
+    <h4>You are logged in</h4>
+    <h4> </h4>
+    <h3> </h3>
+     <h3> </h3>
+    <h3> </h3>
+    <button class="btn btn-primary btn-lg mt-3" routerLink="/">GO TO SHOP</button>
+    <h3> </h3>
+    <h3> </h3>
+     <button class="btn btn-primary btn-lg mt-3" (click)="logout()">Logout</button>
+  </div>
+    </div>
   </section><!-- content -->
 </div><!-- container -->
 </body>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AddedComponent } from '../added/added.component';
 import { CustRegistrationService } from '../cust-registration.service';
 import { Customer } from '../customer';
 import { RestRegistrationService } from '../rest-registration.service';
@@ -18,9 +20,10 @@ myData: any;
 itemId: any;
 message:any;
 
-  constructor(private service:RestRegistrationService, private actRoute: ActivatedRoute, private router: Router, private customerService: CustRegistrationService) { 
+  constructor(private service:RestRegistrationService, private actRoute: ActivatedRoute, private router: Router, 
+    private customerService: CustRegistrationService, private dialog: MatDialog) { 
     const myData = (localStorage.getItem('username')!);
-    console.log(myData);
+    
     this.customerService.getUser(myData).subscribe((customer) => {
     this.custData = customer; 
     console.log(this.custData);
@@ -55,10 +58,22 @@ message:any;
     console.log(itemId)
     let resp=this.customerService.addToCart(itemId, id);
     resp.subscribe((data)=>this.message=data);
+    this.openDialog();
 
     
     //let user = localStorage.getItem('username')
     
+}
+
+openDialog(): void {
+  const dialogRef = this.dialog.open(AddedComponent, {
+    
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    
+    
+  });
 }
 
 }
