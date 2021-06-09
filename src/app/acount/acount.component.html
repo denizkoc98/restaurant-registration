@@ -5,10 +5,10 @@
 
 
     
-<div class="container">
+
 <div class="container">
     <div class="row col-md-6 col-md-offset-2 custyle">
-     <div><strong> <h1> Your Old Purchases:  </h1> </strong></div> 
+     <div><strong> <h1> Old Purchases:  </h1> </strong></div> 
     <table class="table table-striped custab">
    
     <thead>
@@ -33,15 +33,16 @@
          <td>{{item.restname}}</td>
         <td>{{item.bill}} TL</td>
 
-        <table>
+        <div id="pagy3">
+        <table align="center">
             <tr *ngFor="let subItem of item.purchaseItem"> 
-            <td>{{subItem.menuitem.itemName}} </td>
-            
+            <td class="col1">{{subItem.menuitem.itemName}} </td>
             <td>{{subItem.quantityOrdered}} </td>
             <td>{{subItem.menuitem.price * subItem.quantityOrdered}} </td>
             
         </tr>
         </table>
+        </div>
         
    
 
@@ -58,7 +59,7 @@
  
         
     </div>
-</div>
+
  <button class="btn btn-danger btn-block" (click)="logout()">Logout</button>
 
 

@@ -8,9 +8,9 @@
     <div class="row">
                <div id="custom-search-input">
                                 <div class="input-group col-md-12" style="text-align: center">
-                                    <input type="text" class="search-query form-control" placeholder="Search With ID"  name="rest_id" [(ngModel)]="rest_id"/>
+                                    <input type="text" class="search-query form-control" placeholder="Search With Restaurant Name"  name="rest_name" [(ngModel)]="rest_name"/>
                                     <span class="input-group-btn">
-                                        <button class="btn btn-danger" type="button" (click)="findRestaurantById(restaurant.rest_id)">
+                                        <button class="btn btn-danger" type="button" (click)="findRestaurantByName(rest_name)">
                                             <span class=" glyphicon glyphicon-search"></span>
                                         </button>
                                     </span>

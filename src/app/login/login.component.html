@@ -15,7 +15,7 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-    <h1 style="background-color:rgb(230, 237, 238);"> Welcome To BookShop! </h1>
+    <h1 style="background-color:rgb(230, 237, 238);"> Welcome To Café Loyalty! </h1>
 <div class="container">
   <section id="content">
   <div class="text-center my-5" *ngIf="userName===null;">
@@ -46,10 +46,8 @@
     <h3> </h3>
      <h3> </h3>
     <h3> </h3>
-    <button class="btn btn-primary btn-lg mt-3" routerLink="/">GO TO SHOP</button>
-    <h3> </h3>
-    <h3> </h3>
-     <button class="btn btn-primary btn-lg mt-3" (click)="logout()">Logout</button>
+    <button class="btn btn-danger btn-sm btn-block" routerLink="/search">GO TO SHOP</button>
+      <button class="btn btn-danger btn-sm btn-block" (click)="logout()">Logout</button>
   </div>
     </div>
   </section><!-- content -->
@@ -57,3 +55,7 @@
 </body>
 </html>
 <router-outlet></router-outlet>
+
+
+
+

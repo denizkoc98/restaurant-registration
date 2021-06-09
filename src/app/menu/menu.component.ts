@@ -19,6 +19,7 @@ user: any;
 myData: any;
 itemId: any;
 message:any;
+filter:any
 
   constructor(private service:RestRegistrationService, private actRoute: ActivatedRoute, private router: Router, 
     private customerService: CustRegistrationService, private dialog: MatDialog) { 
@@ -64,6 +65,22 @@ message:any;
     //let user = localStorage.getItem('username')
     
 }
+public findRestaurantByName (menuitem: any){
+  let resp=this.service.getAllRestaurants();
+ 
+ resp.subscribe((data)=>
+
+ {
+   this.filter=data
+   console.log(this.filter)
+   
+  this.menus=this.filter
+  console.log(this.menus.rest_name)
+ this.menus = this.menus.filter((p: { itemName:any; rest_menu:any ; menuitem:any })=>p.rest_menu.menuitem.itemName.includes(menuitem));
+
+ });
+  
+}
 
 openDialog(): void {
   const dialogRef = this.dialog.open(AddedComponent, {
@@ -75,5 +92,6 @@ openDialog(): void {
     
   });
 }
+
 
 }

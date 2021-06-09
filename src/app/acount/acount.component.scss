@@ -10,8 +10,6 @@
     transition: 0.5s;
     }
 
-   
-
 #custom-search-input {
   margin:0;
   margin-top: 24px;
@@ -63,15 +61,22 @@ table {
     
     height: auto;
     width: 650px;
+    vertical-align: bottom;
   }
   tr {
     min-height: 100px;
     width: 50px;
+    vertical-align: bottom;
   }
+  .col-md-offset-2 {
+    margin-left: 0%;
+    vertical-align: bottom;
+   }  
   td {
-    border: 1px solid gray;
+    border: 0.5px solid gray;
     
     width: auto;
+    vertical-align: bottom;
     
   }
   ol {
@@ -80,5 +85,14 @@ table {
   }
   th {
     text-align:center; 
+    vertical-align: bottom; 
+}
+
+#pagy3 table tr td {
+  text-align: center;
+  vertical-align: bottom;
+  width: 25%;
+  font-size: 14px;
+  
 }
   

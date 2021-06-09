@@ -72,8 +72,10 @@ export class LoginComponent implements OnInit {
   }
   logout(){
     localStorage.removeItem('username')
+    localStorage.removeItem('user')
     localStorage.removeItem('customer')
     this.service.logOut();
+    this.ngOnInit();
   
   }
   

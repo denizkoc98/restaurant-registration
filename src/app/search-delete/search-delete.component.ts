@@ -14,6 +14,7 @@ export class SearchDeleteComponent implements OnInit {
   restaurants: any;
   myData: any;
   custData:any;
+  filter:any;
   
   
   
@@ -35,9 +36,15 @@ export class SearchDeleteComponent implements OnInit {
 
   }
 
-  public findRestaurantById (rest_id: number){
-    let resp=this.service.findRestaurant(rest_id);
-    resp.subscribe((data)=>this.restaurants=data);
+  public findRestaurantByName (rest_name: any){
+    let resp=this.service.getAllRestaurants();
+    console.log(rest_name)
+   resp.subscribe((data)=>
+   {this.filter=data
+    this.restaurants=this.filter
+   this.restaurants = this.restaurants.filter((p: { rest_name: any; })=>p.rest_name.includes(rest_name));
+  
+   });
     
   }
 
